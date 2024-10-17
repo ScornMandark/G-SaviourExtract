@@ -9,7 +9,7 @@ Tools for extracting the graphical assets of the G-Saviour PS2 game
 - These files
 
 ## Thanks
-Many thanks to the helpful members at the reshax forum for helping me get the scripts developed.
+[Many thanks to the helpful members at the reshax forum for helping me get the scripts developed.](https://reshax.com/topic/1131-ps2-gundam-g-saviour-model-file-help/)
 
 Special thanks to The_oldman, who drafted all the scripts, which I then modified.
 
