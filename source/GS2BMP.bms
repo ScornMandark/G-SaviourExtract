@@ -1,0 +1,69 @@
+ get NAMEBASE basename
+
+ idstring "GS"
+ get TYPE short
+ get IMG_W short
+ get IMG_H short
+ get NUM_MIP short
+ padding 16
+ savepos OFS_PAL
+
+  set MEMORY_FILE binary "\x42\x4D\x00\x00\x00\x00\x00\x00\x00\x00\x36\x00\x00\x00\x28\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x20\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+  xmath IMG_SIZE "IMG_W * IMG_H"
+  xmath FINAL_SIZE "IMG_SIZE * 4"
+
+  putvarchr MEMORY_FILE 0x22 FINAL_SIZE long
+  math FINAL_SIZE += 0x36
+  putvarchr MEMORY_FILE 0x02 FINAL_SIZE long
+  putvarchr MEMORY_FILE 0x12 IMG_W long
+  putvarchr MEMORY_FILE 0x16 IMG_H long
+
+  if TYPE == 0x13
+    for i = 0 < 256
+      get CR byte
+      get CG byte
+      get CB byte
+      get CA byte
+      xmath COL "(CA << 24) + (CR << 16) + (CG << 8) + CB"
+      putarray 1 i COL
+    next i
+    for j = 0 < IMG_H
+     xmath VOFS "(IMG_H - 1 - j) * IMG_W * 4"
+     for i = 0 < IMG_W
+      get COL_INDEX byte
+      getarray COL 1 COL_INDEX
+      xmath OFS "i * 4 + VOFS  + 0x36"
+      putVarChr MEMORY_FILE OFS COL long
+     next i
+    next j
+  elif TYPE == 0x14
+    for i = 0 < 16
+      get CR byte
+      get CG byte
+      get CB byte
+      get CA byte
+      xmath COL "(CA << 24) + (CR << 16) + (CG << 8) + CB"
+      putarray 1 i COL
+    next i
+    xmath HALF_W "IMG_W / 2"
+    for j = 0 < IMG_H
+     xmath VOFS "(IMG_H - 1 - j) * IMG_W * 4"
+     for i = 0 < HALF_W
+      get COL_INDEX byte
+      xmath LOWCOL "COL_INDEX & 0xF"
+      getarray COL 1 LOWCOL
+      xmath OFS "i * 8 + VOFS  + 0x36"
+      putVarChr MEMORY_FILE OFS COL long
+      xmath HICOL "COL_INDEX >> 4"
+      getarray COL 1 HICOL
+      math OFS += 4
+      putVarChr MEMORY_FILE OFS COL long
+     next i
+    next j
+  else
+   cleanexit
+  endif
+ 
+ string RNAME p "%s.bmp" NAMEBASE
+
+log RNAME 0 FINAL_SIZE MEMORY_FILE

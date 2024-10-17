@@ -1,0 +1,12 @@
+# Game: PS2 Gundam G-Saviour
+# Archive: MD
+
+get MDSIZE asize
+get MDNAME basename
+set MEMORY_FILE binary "\x4E\x4A\x43\x4D\x00\x00\x00\x00"
+append
+log MEMORY_FILE  0 MDSIZE
+putVarChr MEMORY_FILE 4 MDSIZE long
+# math MDSIZE  += 8
+string RNAME p "%s/%s.nj" MDNAME MDNAME
+log RNAME 0 MDSIZE MEMORY_FILE  

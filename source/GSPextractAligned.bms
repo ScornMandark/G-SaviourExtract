@@ -1,0 +1,35 @@
+# Game: PS2 Gundam G-Saviour
+# Archive: GSP
+
+get NAMEBASE basename
+set NINJA njtex
+ get NUM_IMG long
+ for i = 0 < NUM_IMG
+  get IMG_OFS long
+  putarray 0 i IMG_OFS
+ next i
+ get DMY long	#play safe
+ padding 16
+ savepos OFS_BLK
+
+
+
+
+
+for i = 0 < NUM_IMG
+
+ goto OFS_BLK
+ string RNAME p "%s/%s%03d.gs" NAMEBASE NINJA i
+ 
+ getarray GS_SIZE 0 i
+
+ log RNAME  OFS_BLK GS_SIZE
+
+# this will keep even the full 16 byte padding for well aligned offsets.
+
+ xmath tex_pad "16 - (GS_SIZE % 16)"
+
+ xmath OFS_BLK "OFS_BLK + GS_SIZE + tex_pad"
+
+next i
+cleanexit
