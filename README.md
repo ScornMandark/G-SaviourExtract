@@ -10,6 +10,7 @@ Tools for extracting the graphical assets of the G-Saviour PS2 game
 
 ## Thanks
 Many thanks to the helpful members at the reshax forum for helping me get the scripts developed.
+
 Special thanks to The_oldman, who drafted all the scripts, which I then modified.
 
 ## Process
@@ -38,10 +39,12 @@ Special thanks to The_oldman, who drafted all the scripts, which I then modified
 
 ## Future Work
 It would be really nice to have noesis export the textures as assigned to the materials, but I do not know how to make it do that yet.
+
 It would also be nice to have noesis recursively search through these folders for converting the .gs files to .bmp, instead of going folder by folder.
+
 There are some .mt and .mtp files that are very similar to .njm animation files, and I've managed to make a couple actually animate in noesis like that, but I don't know why most of them don't work yet.  Research continues.
 
-## Unit Decoder Ring
+## Unit Decoder
 [^1]: In general, the first two-three letters describe the unit in question.  The rest often indicate LOD.  Typically the highest detail version will be <Prefix>01M01, like GSG01M01 or SHC01M01.  This model will often have the effect parts from shields, thrusters, etc attached as well.
 
 Here's a list of ones I've sorted out so far:
