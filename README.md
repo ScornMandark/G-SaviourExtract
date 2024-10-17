@@ -30,7 +30,7 @@ Special thanks to The_oldman, who drafted all the scripts, which I then modified
 5. This will create a list of .gs files in named subfolders, many of which align with the .nj files.  They are named njtex000.gs, njtex001.gs, to follow the Noesis material autonaming convention.
 6. Optionally, do the same with GS2BMPBaseFolder.bms - there are some single textures in the main DATA folder, but mostly for backgrounds.
 7. Finally (for now), drag the GS2BMP.bms script to quickbms.exe.
-   1. Pick one of the created subfolders.  Note - There are now over 300 folders with various information in it, so pick carefully! [^1]
+   1. Pick one of the created subfolders.  Note - There are now over 300 folders with various information in it, so pick carefully! See Unit Decoder list below.
    2. Type *.gs for the input files.
    3. Stay in the subfolder.
    4. Hit enter, let it rip.
@@ -45,7 +45,9 @@ It would also be nice to have noesis recursively search through these folders fo
 There are some .mt and .mtp files that are very similar to .njm animation files, and I've managed to make a couple actually animate in noesis like that, but I don't know why most of them don't work yet.  Research continues.
 
 ## Unit Decoder
-[^1]: In general, the first two-three letters describe the unit in question.  The rest often indicate LOD.  Typically the highest detail version will be <Prefix>01M01, like GSG01M01 or SHC01M01.  This model will often have the effect parts from shields, thrusters, etc attached as well.
+In general, the first two-three letters describe the unit in question; the rest typically indicate LOD.  
+
+Typically the highest detail version will be <Prefix>01M01, like GSG01M01 or SHC01M01.  This model will often have the effect parts from shields, thrusters, etc attached as well.
 
 Here's a list of ones I've sorted out so far:
 - BG : Bugu
