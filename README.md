@@ -2,11 +2,11 @@
 Tools for extracting the graphical assets of the G-Saviour PS2 game
 
 ## What you'll need
-A copy of the G-Saviour PS2 game files, typically as an .ISO
-An unpacking tool like 7zip
-[QuickBMS by Luigi Auriemma](https://aluigi.altervista.org/quickbms.htm)
-[Noesis by Rich Whitehouse](https://richwhitehouse.com/index.php?content=inc_projects.php&showproject=91)
-These files
+- A copy of the G-Saviour PS2 game files, typically as an .ISO
+- An unpacking tool like 7zip
+- [QuickBMS by Luigi Auriemma](https://aluigi.altervista.org/quickbms.htm)
+- [Noesis by Rich Whitehouse](https://richwhitehouse.com/index.php?content=inc_projects.php&showproject=91)
+- These files
 
 ## Thanks
 Many thanks to the helpful members at the reshax forum for helping me get the scripts developed.
