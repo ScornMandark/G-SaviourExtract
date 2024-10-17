@@ -1,11 +1,11 @@
 # G-SaviourExtract
 Tools for extracting the graphical assets of the G-Saviour PS2 game
 
-![Cleaned up and blinged out in blender](https://reshax.com/uploads/monthly_2024_10/image.png.a2e20aeffaab69c24345e6e6d13c7bd0.png GSS_HI)
+![GSS_HI Cleaned up and blinged out in blender](https://reshax.com/uploads/monthly_2024_10/image.png.a2e20aeffaab69c24345e6e6d13c7bd0.png "GSS_HI, blender")
 
-![Cleaned up and blinged out a bit in blender](https://reshax.com/uploads/monthly_2024_10/image.png.29fe96589b20ef4d86b63c50b983f122.png JS01M01)
+![JS01M01 up and blinged out a bit in blender](https://reshax.com/uploads/monthly_2024_10/image.png.29fe96589b20ef4d86b63c50b983f122.png "JS01M01, blender")
 
-![Just viewed in Noesis](https://reshax.com/uploads/monthly_2024_10/image.png.fe9bfa98e9b64860abb07a949961dcef.png SH01M01)
+![SH01M01 viewed in Noesis](https://reshax.com/uploads/monthly_2024_10/image.png.fe9bfa98e9b64860abb07a949961dcef.png "SH01M01, noesis")
 
 
 ## What you'll need
