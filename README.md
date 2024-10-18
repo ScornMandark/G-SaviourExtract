@@ -22,27 +22,36 @@ Special thanks to The_oldman, who drafted all the scripts, which I then modified
 
 ## Process
 1. Place the .bms scripts in your QuickBMS directory to make it easier to use.
-2. Unpack the game .iso file somewhere easy to find.
-3. Start by dragging the MD2NJ.bms script onto quickbms.exe
+2. Save the .py somewhere you will remember it.
+3. Unpack the game .iso file somewhere easy to find.
+4. Start by dragging the MD2NJ.bms script onto quickbms.exe
    1. Go to your unpacked game file directory, then into the DATA folder
    2. Type *.md for the input files
    3. Stay in your unpacked game file directory DATA folder
    4. Hit enter, and let it rip.
-4. This will create a subfolder for every .md file in the game - this includes stages, maps, spaceships, cutscenes, and mecha.  The created .nj files can be read by Noesis natively, and include UV mapping and bone information.
-5. Then drag the GSPextractAligned.bms script onto quickbms.exe
+5. This will create a subfolder for every .md file in the game - this includes stages, maps, spaceships, cutscenes, and mecha.  The created .nj files can be read by Noesis natively, and include UV mapping and bone information.
+6. Then drag the GSPextractAligned.bms script onto quickbms.exe
    1. Same folder as before
    2. Type *.gsp for the input files
    3. Stay in the DATA folder
    4. Hit enter, let it rip.
 5. This will create a list of .gs files in named subfolders, many of which align with the .nj files.  They are named njtex000.gs, njtex001.gs, to follow the Noesis material autonaming convention.
 6. Optionally, do the same with GS2BMPBaseFolder.bms - there are some single textures in the main DATA folder, but mostly for backgrounds.
-7. Finally (for now), drag the GS2BMP.bms script to quickbms.exe.
+7. Next, drag the GS2BMP.bms script to quickbms.exe.
    1. Pick one of the created subfolders.  Note - There are now over 300 folders with various information in it, so pick carefully! See Unit Decoder list below.
    2. Type *.gs for the input files.
    3. Stay in the subfolder.
    4. Hit enter, let it rip.
 8. Open Noesis, go to a subfolder, and open up the .nj file.  With the proper .bmp names, it will automagically assign textures to the materials.
-9. Export as desired, and enjoy!
+9. Export to .fbx to maintain the bone structure from the file.
+10. Open Blender, clear out the scene, and import the .fbx model of your choice.
+    - To ensure proper bone alignment, make sure Armature -> Automatic Bone Orientation is selected.
+12. Save the Blender file in the same folder as your extracted .bmp files.
+    - I typically name the blender file after the .md file, but you do you.
+13. Go to the Scripting window and open the .py file.
+14. Select all the objects with A, then run the script. Switch back to the Layout window.
+15. Make sure you are in Material Preview mode to verify the material assignments.
+16. Enjoy!
 
 ## Future Work
 It would be really nice to have noesis export the textures as assigned to the materials, but I do not know how to make it do that yet.
@@ -51,7 +60,7 @@ It would also be nice to have noesis recursively search through these folders fo
 
 There are some .mt and .mtp files that are very similar to .njm animation files, and I've managed to make a couple actually animate in noesis like that, but I don't know why most of them don't work yet.  Research continues.
 
-## Unit Decoder
+## Unit Decoder List
 In general, the first two-three letters describe the unit in question; the rest typically indicate LOD.  
 
 Typically the highest detail version will be <Prefix>01M01, like GSG01M01 or SHC01M01.  This model will often have the effect parts from shields, thrusters, etc attached as well.
