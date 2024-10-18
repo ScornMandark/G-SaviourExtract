@@ -42,21 +42,21 @@ Special thanks to The_oldman, who drafted all the scripts, which I then modified
    2. Type *.gs for the input files.
    3. Stay in the subfolder.
    4. Hit enter, let it rip.
-8. Open Noesis, go to a subfolder, and open up the .nj file.  With the proper .bmp names, it will automagically assign textures to the materials.
+8. Open Noesis, go to a subfolder, and open up the .nj file.  With the proper .bmp names, it will automagically preview textures for the materials.
 9. Export to .fbx to maintain the bone structure from the file.
-10. Open Blender, clear out the scene, and import the .fbx model of your choice.
+   - Once I figure out animation conversion, .fbx will contain bones and animations.
+11. Open Blender, clear out the scene, and import the .fbx model of your choice.
     - To ensure proper bone alignment, make sure Armature -> Automatic Bone Orientation is selected.
 12. Save the Blender file in the same folder as your extracted .bmp files.
     - I typically name the blender file after the .md file, but you do you.
 13. Go to the Scripting window and open the .py file.
 14. Select all the objects with A, then run the script. Switch back to the Layout window.
-15. Make sure you are in Material Preview mode to verify the material assignments.
+15. Make sure you are in Material Preview mode to verify the material assignments, then save again.
 16. Enjoy!
 
 ## Future Work
-It would be really nice to have noesis export the textures as assigned to the materials, but I do not know how to make it do that yet.
 
-It would also be nice to have noesis recursively search through these folders for converting the .gs files to .bmp, instead of going folder by folder.
+It would be nice to have QuickBMS recursively search through these folders for converting the .gs files to .bmp, instead of going folder by folder.
 
 There are some .mt and .mtp files that are very similar to .njm animation files, and I've managed to make a couple actually animate in noesis like that, but I don't know why most of them don't work yet.  Research continues.
 
